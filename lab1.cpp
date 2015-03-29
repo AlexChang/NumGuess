@@ -1,5 +1,5 @@
 // p1.cpp
-// F1403022°à  5140309508  ÕÅ¸£Ã÷  2015.03.25
+// F1403022班  5140309508  张福明  2015.03.25
 
 #include <iostream>
 #include <ctime>
@@ -15,7 +15,7 @@ int main()
 	
 	srand(time(NULL));								// initialization of the seed of random numbers
 	
-	cout << "ÐèÒªÍæÓÎÏ·Âð£¨Y/N£©£¿ ";
+	cout << "需要玩游戏吗（Y/N）？ ";
 	cin >> choose;
 	while (choose=='Y'){
 		answer[0]=rand()*10/(RAND_MAX+1);		// generate random num1 
@@ -30,7 +30,7 @@ int main()
 			
 		games+=1;								// record innings								
 		for (i=0; i<7; ++i){
-			cout << "ÇëÊäÈëÄã²Â²âµÄÊý×Ö:" << endl;
+			cout << "请输入你猜测的数字:" << endl;
 			for (j=0; j<3; ++j)	cin >> guess[j];		// guess three numbers 
 			correctA=0;
 			correctB=0;
@@ -42,22 +42,22 @@ int main()
 			}
 			if (correctA==3){
 				win+=1;							// record innings for the win 
-				cout << "¹§Ï²£¬Äã²Â¶ÔÁË";
+				cout << "恭喜，你猜对了";
 				break; 
 			}
 			else cout << correctA << 'A' << correctB << 'B' << endl;	// output A,B
 		}
 		if (correctA!=3) {
-			cout << "ºÜÒÅº¶£¬ÄãÃ»ÓÐÔÚ¹æ¶¨´ÎÊýÄÚ²Â¶Ô¡£´ð°¸ÊÇ ";
+			cout << "很遗憾，你没有在规定次数内猜对。答案是 ";
 			for (j=0; j<3; ++j){				// output the correct answer 
 				cout << answer[j];
 			}
 		}
-		cout << endl << "ÐèÒªÍæÓÎÏ·Âð£¨Y/N£©£¿ ";		// ask the player if he wants to continue
+		cout << endl << "需要玩游戏吗（Y/N）？ ";		// ask the player if he wants to continue
 		cin >> choose; 
 	}
-	cout << "ÄãÒ»¹²ÍæÁË" << games << "¾Ö£¬Ó®ÁË" << win 
-		 << "¾Ö£¬ÊäÁË" << games-win << "¾Ö\n";		// output the record
+	cout << "你一共玩了" << games << "局，赢了" << win 
+		 << "局，输了" << games-win << "局\n";		// output the record
 	
 	return 0;
 }
