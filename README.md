@@ -1,2 +1,2 @@
 # NumGuess
-20150325
+A simple game about guessing numbers, course project of CS125.
